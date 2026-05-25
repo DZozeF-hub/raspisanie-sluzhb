@@ -1,7 +1,7 @@
 {
   "name": "Расписание богослужений",
   "short_name": "Службы",
-  "description": "Расписание богослужений в Свято-Александро-Невском храме",
+  "description": "Удобное приложение для составления и печати расписания богослужений в Свято-Александро-Невском храме",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#1a3c34",
@@ -17,12 +17,6 @@
       "src": "assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
-    {
-      "src": "assets/icons/maskable-icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ]
 }
