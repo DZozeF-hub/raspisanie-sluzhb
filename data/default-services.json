@@ -1,0 +1,10 @@
+{
+  "services": [
+    { "name": "Литургия", "defaultTime": "08:00" },
+    { "name": "Вечерня", "defaultTime": "17:00" },
+    { "name": "Утреня", "defaultTime": "06:30" },
+    { "name": "Молебен", "defaultTime": "09:00" },
+    { "name": "Панихида", "defaultTime": "12:00" },
+    { "name": "Всенощное бдение", "defaultTime": "18:00" }
+  ]
+}

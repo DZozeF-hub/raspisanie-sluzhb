@@ -1,0 +1,20 @@
+{
+  "name": "raspisanie-hram",
+  "version": "1.0.0",
+  "description": "Расписание богослужений",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "productName": "Расписание Храм",
+    "win": {
+      "target": "portable",
+      "icon": "assets/icons/icon.ico"
+    }
+  }
+}

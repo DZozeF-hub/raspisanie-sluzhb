@@ -1,0 +1,28 @@
+{
+  "name": "Расписание богослужений",
+  "short_name": "Службы",
+  "description": "Расписание богослужений в Свято-Александро-Невском храме",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a3c34",
+  "theme_color": "#1a3c34",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

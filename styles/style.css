@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+    background: #0f1c17 url('https://images.unsplash.com/photo-1588392382834-9b4c5b9c4e0d?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 28, 23, 0.82);
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(135deg, #1a3c34, #2a5c4c);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.week-selector {
+    background: rgba(255,255,255,0.95);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+}
+
+.day {
+    background: rgba(255,255,255,0.97);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.day-header {
+    background: linear-gradient(135deg, #1a3c34, #2a5c4c);
+    color: white;
+    padding: 18px 20px;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.services {
+    padding: 15px;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 45px;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-row:last-child { border-bottom: none; }
+
+.service-row input[type="time"],
+.service-row input[type="text"] {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-size: 1.05rem;
+}
+
+.btn-add {
+    margin: 10px 0 5px;
+    padding: 10px 18px;
+    background: #2a5c4c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-remove {
+    background: #c33;
+    color: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, #1a3c34, #2a5c4c);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: block;
+    margin: 40px auto;
+}
+/* Кастомизация */
+.header-content {
+    position: relative;
+}
+
+.btn-settings {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Настройки */
+.header-content {
+    position: relative;
+}
+
+.btn-settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 460px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+.btn-settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.modal-content label {
+    display: block;
+    margin: 12px 0 6px 0;
+    font-weight: 600;
+}
+/* Выбор дней */
+.days-selector {
+    background: rgba(255,255,255,0.95);
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.days-selector h3 {
+    margin-bottom: 12px;
+    color: #1a3c34;
+    font-size: 1.1rem;
+}
+
+.day-toggles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+}
+
+.day-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.day-toggle:hover {
+    background: #e8f0eb;
+}
+
+.day-toggle input[type="checkbox"] {
+    accent-color: #1a3c34;
+    width: 20px;
+    height: 20px;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.history-list {
+    margin: 20px 0;
+}
+
+.history-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+    background: #f9f9f9;
+}
+
+.history-item button {
+    margin-top: 8px;
+}
+.mode-switcher {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.mode-btn {
+    padding: 10px 24px;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #f0f0f0;
+    color: #333;
+}
+
+.mode-btn.active {
+    background: #1a3c34;
+    color: white;
+}
+
+/* Скрытие/показ week-controls */
+#week-controls {
+    display: block;
+}
+.mode-switcher {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.mode-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #e0e0e0;
+    color: #333;
+}
+
+.mode-btn.active {
+    background: #1a3c34;
+    color: white;
+}
+/* Блок выбора дней недели */
+.days-selector {
+    background: rgba(255,255,255,0.95);
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.days-selector h3 {
+    margin-bottom: 12px;
+    color: #1a3c34;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.day-toggles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 8px;
+}
+
+.day-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.98rem;
+}
+
+.day-toggle:hover {
+    background: #eef2ef;
+    border-color: #1a3c34;
+}
+
+.day-toggle input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #1a3c34;
+}
+
+.day-toggle label {
+    cursor: pointer;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.day-toggle small {
+    color: #666;
+    font-size: 0.85rem;
+}

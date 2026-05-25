@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание богослужений</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+  <header>
+    <div class="header-content">
+        <h1>⛪ В Свято-Александро-Невском храме</h1>
+    </div>
+</header>
+
+<div class="days-selector">
+    <h3>Выберите дни недели:</h3>
+    <div id="day-toggles" class="day-toggles"></div>
+</div>
+<!-- Модальное окно настроек экспорта -->
+<div id="settings-modal" class="modal">
+    <div class="modal-content">
+        <h2>Настройки экспорта (PDF)</h2>
+        
+        <label>Размер основного текста:</label>
+        <input type="range" id="font-size" min="14" max="28" value="18" style="width:100%">
+        <span id="font-size-value">18px</span><br><br>
+        
+        <label>Стиль текста:</label>
+        <select id="font-style">
+            <option value="normal">Обычный</option>
+            <option value="italic" selected>Наклонный (курсив)</option>
+        </select><br><br>
+        
+        <label>Жирность текста:</label>
+        <select id="font-weight">
+            <option value="300">Тонкий</option>
+            <option value="400" selected>Обычный</option>
+            <option value="600">Полужирный</option>
+        </select><br><br>
+        
+        <label>Размер заголовков:</label>
+        <input type="range" id="header-size" min="24" max="48" value="32" style="width:100%">
+        <span id="header-size-value">32px</span>
+        
+        <div style="margin-top: 25px;">
+            <button onclick="saveExportSettings()" class="btn-primary">Сохранить настройки</button>
+            <button onclick="closeSettings()" style="margin-left:12px;">Отмена</button>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="container">
+        <div class="week-selector">
+            <label>Начало недели:</label>
+            <input type="date" id="start-date" onchange="loadWeek()">
+        </div>
+
+        <div id="days-container" class="days-grid"></div>
+    </div>
+</main>
+
+ <footer>
+    <button onclick="generateSchedule()" class="btn-generate">
+        📄 Сформировать расписание
+    </button>
+</footer>
+
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/schedule.js"></script>
+    <script src="scripts/export.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/history.js"></script>
+</body>
+</html>
